@@ -1,11 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Color(0xff54CD98),
+        systemNavigationBarColor: Color(0xff1F915F),
+        systemNavigationBarIconBrightness: Brightness.light //todo
+        ));
+
     return MaterialApp(
         home: Scaffold(
             backgroundColor: const Color(0Xff29C17E),
