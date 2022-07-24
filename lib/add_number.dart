@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_shopping_app/add_number.dart';
+import 'package:grocery_shopping_app/sign_up_page.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class AddNumberPage extends StatelessWidget {
+  const AddNumberPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Color(0xffF4F7FA),
-        systemNavigationBarColor: Color(0xff272A3F),
-        statusBarBrightness: Brightness.light, //todo
+        statusBarColor: Color(0xff54CD98),
+        systemNavigationBarColor: Color(0xff1F915F),
         systemNavigationBarIconBrightness: Brightness.light //todo
         ));
 
@@ -19,6 +18,24 @@ class SignUpPage extends StatelessWidget {
     return MaterialApp(
       home: Builder(
         builder: (context) => Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Color(0xff29C17E),
+            title: Text('Add number'),
+            iconTheme: IconThemeData(color: Colors.white),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                size: 16,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpPage()),
+                );
+              },
+            ),
+          ),
           backgroundColor: const Color(0XffF4F7FA),
           // backgroundColor:  Colors.red,
           body: Column(
@@ -149,10 +166,7 @@ class SignUpPage extends StatelessWidget {
                                   // the form is invalid.
 
                                   if (_formKey.currentState!.validate()) {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => AddNumberPage()),
-                                    );
+                                    print('data ok');
                                     // Process data.
                                   } else {}
                                 },
