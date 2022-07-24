@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_shopping_app/sign_up_page.dart';
 
 import 'home_page.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const HomePage();
+    return const SignUpPage();
+    // return const HomePage();
   }
 }
